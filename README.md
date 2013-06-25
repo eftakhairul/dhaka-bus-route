@@ -1,4 +1,3 @@
-DhakaBusRoute
-=============
-
-DhakaBusRoute is an application for Mozilla OS 
+Dhaka Bus Route
+===============
+Md. Eftakhairul Islam <eftakhairul@gmail.com>

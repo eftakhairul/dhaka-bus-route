@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ঢাকার বাসের রুট সমূহ</title>
+
+  <link rel="stylesheet" href="css/headers.css">
+  <link rel="stylesheet" href="css/action_menu.css">
+  <link rel="stylesheet" href="css/lists.css">
+
+  <link rel="stylesheet" href="css/transitions.css">
+
+  <!-- Util CSS: some extra tricks -->
+  <link rel="stylesheet" href="css/util.css">
+
+  <!-- Additional markup to make Building Blocks kind of cross browser -->
+  <link rel="stylesheet" href="css/cross_browser.css">
+
+
+  <style>
+    #index {
+      height: 100%;
+    }
+
+    iframe {
+      border: none;
+      height: 100%;
+      width: 100%;
+    }
+
+    [data-position="right"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      z-index: 15;
+      z-index: 100; /* -> drawer */
+    }
+    [data-position="right"].current {
+      animation: rightToCurrent 0.4s forwards;
+      -webkit-animation: rightToCurrent 0.4s forwards;
+    }
+    [data-position="right"].right {
+      animation: currentToRight 0.4s forwards;
+      -webkit-animation: currentToRight 0.4s forwards;
+    }
+    [data-position="back"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      opacity: 0;
+      /* z-index: 100; -> drawer */
+    }
+    [data-position="back"].fade-in {
+      z-index: 20;
+      animation: fadeIn 0.2s forwards;
+      -webkit-animation: fadeIn 0.2s forwards;
+    }
+    [data-position="back"].fade-out {
+      animation: fadeOut 0.2s forwards;
+      -webkit-animation: fadeOut 0.2s forwards;
+    }
+    [data-position="back"] iframe {
+      pointer-events: none;
+    }
+
+    [data-position="edit-mode"] {
+      position: absolute;
+      top: -5rem;
+      left: 0;
+      right: 0;
+      bottom: -7rem;
+      z-index: 0;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    [data-position="edit-mode"].edit {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 20;
+      opacity: 1;
+    }
+    [data-position="edit-mode"] iframe {
+      pointer-events: none;
+    }
+
+    #scrolling iframe {
+      top: -5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="index">
+    <section role="region">
+      <header class="fixed">
+        <h1>ঢাকার বাসের রুট সমূহ</h1>
+      </header>
+    </section>
+
+    <section class="scrollable header" data-type="list" id='test'>
+      <ul>
+        <li>
+          <a id="bus_1" href="javascript:void(0)">
+            <p>১নং বাস</p>
+          </a>
+        </li>
+        <li>
+          <a id="bus_2" href="javascript:void(0)">
+            <p>১/ই নং বাস</p>
+          </a>
+        </li>
+
+        <li>
+          <a id="bus_3" href="javascript:void(0)">
+            <p>২ নং বাস</p>
+          </a>
+        </li>
+
+        <li>
+          <a id="bus_4" href="javascript:void(0)">
+            <p>৩ নং বাস</p>
+          </a>
+        </li>
+
+        <li>
+          <a id="bus_5" href="javascript:void(0)">
+            <p>৪  নং বাস</p>
+          </a>
+        </li>
+
+        <li>
+          <a id="bus_6" href="javascript:void(0)">
+            <p>৬ নং বাস</p>
+          </a>
+        </li>
+
+        <li>
+          <a id="bus_7" href="javascript:void(0)">
+            <p>৬/এ  নং বাস</p>
+          </a>
+        </li>
+
+        <li>
+          <a id="bus_9" href="javascript:void(0)">
+            <p>৬ নং বাস</p>
+          </a>
+        </li>
+
+
+        <li>
+          <a id="bus_10" href="javascript:void(0)">
+            <p>৬ নং বাস</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section> <!-- end index -->
+
+
+
+  <!--Data Container-->
+  <section id="headers" data-position="right">
+     <section role="region">
+      <header class="fixed">
+        <a id="btn-headers-back" href="#"><span class="icon icon-back">back</span></a>
+        <h1>বিস্তারিত </h1>
+      </header>
+    </section>
+    <iframe id='content_frame' src="containers.html" class="scrollable header"></iframe>
+  </section>
+
+  <!--Data Container-->
+
+
+
+
+
+
+  <script>
+    document.querySelector('#btn-headers-back').addEventListener ('click', function () {
+      document.querySelector('#headers').className = 'right';
+    });
+
+    document.querySelector('#bus_1').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  'মিরপুর -১২ থেকে মিরপুর -সাড়ে এগার -এগার- অরিজিনাল দশ- দশ নাম্বার গোল চত্বর-শেওড়াপাড়া-কাজীপাড়া-আগারগাঁও-রোকেয়া স্মরনী-খামারবাড়ী-ফার্মগেট-কারওয়ানবাজার-বাংলামটর - শাহবাগ-মৎসভবন-প্রেস ক্লাব-পল্টন-জিপিও-বঙ্গবন্ধু এভিনিউ-ফুলবাড়িয়া-বংশাল-নয়াবাজার - ইংলিশরোড-সদরঘাট';
+
+    });
+
+    document.querySelector('#bus_2').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  'পল্লবী-মিরপুর ১০- শ্যাওড়া পাড়া-ফার্মগেট- শাহাবাগ-পল্টন-মতিঝিল-যাত্রাবাড়ি';
+    });
+
+    document.querySelector('#bus_3').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  'মিরপুর চিড়িয়াখানা-সনি সিনেমা হল- মিরপুর এক নাম্বার- চাইনিজ-আনসার ক্যাম্প-মিরপুর বাংলা কলেজ-টেকনিক্যাল-দারুস সালাম-কল্যানপুর-শ্যামলী -আদাবর-শিশু মেলা ( আগারগাঁও-শিশু হাসপাতাল)- কলেজগেট- আসাদগেট-খামারবাড়ি-ফার্মগেট- কারওয়ানবাজার-বাংলামটর - শাহবাগ-মৎসভবন-বঙ্গবাজার-ফুলবাড়িয়া';
+    });
+
+    document.querySelector('#bus_4').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  'ফুলবাড়িয়া-বঙ্গবাজার-মৎসভবন-শাহবাগ-বাংলামটর-কারওয়ানবাজার-ফার্মগেট-ক্যান্টনম্যান্ট-মহাখালী-চেয়ারম্যানবাড়ী-কাকলী-আর্মি ষ্টেডিয়াম-এমইএস-জিয়া কলোনী-শ্যাওড়া-কুড়িল বিশ্বরোড-খিলক্ষেত -এয়ারপোর্ট- জসিম উদ্দিন-রাজলক্ষী-হাউজবিল্ডিং-আজমপুর-আবদুল্লাহপুর';
+    });
+
+    document.querySelector('#bus_5').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  'শাহবাগ-বাংলামটর-কারওয়ানবাজার-ফার্মগেট-ক্যান্টনম্যান্ট-- বালুঘাট ';
+    });
+
+    document.querySelector('#bus_6').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  'কমলাপুর-মতিঝিল-গুলিস্থান-জিপিও-প্রেস ক্লাব-মৎসভবন-শাহবাগ-বাংলামটর-কারওয়ানবাজার-ফার্মগেট-(ক্যান্টনম্যান্ট জাহাঙ্গীর গেট)-মহাখালী-চেয়ারম্যানবাড়ী-কাকলী-বনানীবাজার-গুলশান';
+    });
+
+    document.querySelector('#bus_7').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  'কমলাপুর-মতিঝিল-গুলিস্থান-জিপিও-প্রেস ক্লাব-মৎসভবন-শাহবাগ-বাংলামটর-কারওয়ানবাজার-ফার্মগেট-(ক্যান্টনম্যান্ট জাহাঙ্গীর গেট)-মহাখালী-চেয়ারম্যানবাড়ী-কাকলী-বনানীবাজার-গুলশান';
+    });
+
+
+    document.querySelector('#bus_2').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  '';
+    });
+
+
+    document.querySelector('#bus_2').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  '';
+    });
+
+
+    document.querySelector('#bus_2').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  '';
+    });
+
+
+   document.querySelector('#bus_2').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  '';
+    });
+
+    document.querySelector('#bus_2').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  '';
+    });
+
+
+    document.querySelector('#bus_2').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  '';
+    });
+
+
+    document.querySelector('#bus_2').addEventListener ('click', function () {
+        document.querySelector('#headers').className = 'current';
+        document.querySelector('#content_frame').contentDocument.querySelector('#route_details').innerHTML =  '';
+    });
+
+  </script>
+</body>
+</html>
+
