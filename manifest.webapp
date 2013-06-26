@@ -1,6 +1,6 @@
 {
     "version": "1.0",
-    "name": "DhakaBusRoute",
+    "name": "BusRoute",
     "description": "Dhaka Bus Route",
     "launch_path": "/index.html",
     "icons": {
