@@ -1,16 +1,23 @@
 {
     "version": "1.0",
-    "name": "BDBusRoute",
-    "description": "Bus Route For BD",
+    "name": "DhakaBusRoute",
+    "description": "Dhaka Bus Route",
     "launch_path": "/index.html",
     "icons": {
-        "16": "/img/icons/mortar-16.png",
-        "48": "/img/icons/mortar-48.png",
-        "128": "/img/icons/mortar-128.png"
+        "128": "/img/icons/bus.png"
     },
     "developer": {
         "name": "Eftakhairul Islam",
         "url": "http://eftakhairul.com"
     },
-    "installs_allowed_from": ["*"]
+    "locales": {
+        "en": {
+            "description": "Bus Route of Dhaka City in Bangla Language"
+        },
+        "bn": {
+            "description": "ঢাকার বাসের রুট সমূহ"
+        }
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "bn"
 }
