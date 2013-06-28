@@ -1,6 +1,5 @@
 #Dhaka Bus Route
-===============
-###### Md. Eftakhairul Islam <eftakhairul@gmail.com>
+###### Md. Eftakhairul Islam   <eftakhairul@gmail.com>
 ###### Web: [http://eftakhairul.com](http://eftakhairul.com)
 ----------------------------------------------
 
