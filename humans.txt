@@ -1,0 +1,19 @@
+/* TEAM */
+Author: Eftakhairul Islam
+Contact: eftakhairul [at] gmail [dot] com
+Twitter: eftakhairul
+From: Dhaka, Bangladesh.
+Site: http://eftakhairul.com/
+
+/* THANKS */
+Name: Tahin Rahman
+
+
+/* SITE */
+Last update: 2013/07/01
+Language: Bangla
+
+Doctype: HTML5
+Standards: HTML, CSS, JavaScript
+
+Software: Bus Route of Dhaka City in Bangla Language
