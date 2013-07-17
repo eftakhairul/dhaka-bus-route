@@ -1,7 +1,7 @@
 {
     "version": "1.0",
     "name": "BusRoute",
-    "description": "Dhaka Bus Route",
+    "description": "Bus Route of Dhaka City in Bangla Language",
     "launch_path": "/index.html",
     "icons": {
         "128": "/img/icons/bus.png"
@@ -9,15 +9,7 @@
     "developer": {
         "name": "Eftakhairul Islam",
         "url": "http://eftakhairul.com"
-    },
-    "locales": {
-        "en": {
-            "description": "Bus Route of Dhaka City in Bangla Language"
-        },
-        "bn": {
-            "description": "ঢাকার বাসের রুট সমূহ"
-        }
-    },
+    },    
     "installs_allowed_from": ["*"],
-    "default_locale": "bn"
+    "default_locale": "en"
 }
